@@ -1,5 +1,6 @@
 package pac.dayvol;
 
+import pac.Packages;
 import pac.StockPac;
 import pac.inter.Accessable;
 import pac.inter.AvaSrc;
@@ -15,7 +16,7 @@ public class DayVolPac extends StockPac implements AvaSrc, Accessable {
     public DayVolPac(String se,int sn){
         stockexchange=se;
         stocknum=sn;
-        packagetype=DayVolPac.class;
+        pactype =DayVolPac.class;
     }
 
     public DayVolPac(String sen) {
@@ -26,15 +27,23 @@ public class DayVolPac extends StockPac implements AvaSrc, Accessable {
         data.add(dvd);
     }
 
+    @Override
+    public Packages addAll(Packages pac) throws  Exception{
+        if(pac.getPacType()!=this.getPacType())
+            throw new Exception("type not matching!");
+        data.addAll(((DayVolPac)pac).data);
+        return this;
+    }
+
     // AvaSrc
 
     @Override
-    public int getDataSize() {
+    public int getASDataSize() {
         return data.size();
     }
 
     @Override
-    public int getComData(int index) {
+    public int getASData(int index) {
         return data.get(index).getVolume();
     }
 

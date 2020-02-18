@@ -1,5 +1,7 @@
 package pac.dayclose;
 
+import pac.key.KeyYmd;
+
 public class DayCloseData {
     int ymd;
     int closeprice;
@@ -8,5 +10,8 @@ public class DayCloseData {
         closeprice=close;
     }
     public int getYmd(){ return ymd; }
+    public KeyYmd getKey(){
+        return new KeyYmd(ymd);
+    }
     public int getCloseprice(){ return closeprice; }
 }

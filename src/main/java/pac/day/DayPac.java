@@ -20,6 +20,14 @@ public class DayPac extends Packages implements Storable {
     public String getStockexchange(){return stockexchange;}
     public int getStocknum(){return stocknum;}
 
+    @Override
+    public Packages addAll(Packages pac) throws  Exception{
+        if(pac.getPacType()!=this.getPacType())
+            throw new Exception("type not matching!");
+        data.addAll(((DayPac)pac).data);
+        return this;
+    }
+
     // Storable
 
 

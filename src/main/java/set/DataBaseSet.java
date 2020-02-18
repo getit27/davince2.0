@@ -9,6 +9,8 @@ public class DataBaseSet {
     public static String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     public static String DB_URL = "jdbc:mysql://localhost:3306/RUNOOB?useSSL=false&serverTimezone=UTC";
 
+    public static String DB_NAME ="RUNOOB";
+
     // 数据库的用户名与密码，需要根据自己的设置
     public static String USER = "root";
     public static String PASS = "root";
@@ -20,7 +22,7 @@ public class DataBaseSet {
         DB_URL=pro.getProperty("DB_URL");
         USER=pro.getProperty("USER");
         PASS=pro.getProperty("PASS");
-
+        DB_NAME=pro.getProperty("DB_NAME");
         in.close();
     }
 }

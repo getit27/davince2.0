@@ -27,12 +27,14 @@ public class Controller {
     static String shminl;
     static String szday;
     static String szminl;
+
     public static void main(String[]args) {
         //new InSto(new DayIn("F:\\gkt\\zyyht\\vipdoc\\sh\\lday\\sh000001.day"));
         //new InSto(new MinlIn("F:\\gkt\\zyyht\\vipdoc\\sh\\minline\\sh000001.lc1"));
         try {
             DataBaseSet.loadDataBaseSet();
             loadMainSet();
+            GlobalVariable.initGlobalVariable();
             //new ComAva(new DayClosePac("sh", 1), new AvaCom(5, DayClosePac.class, DayAvaPac.class));
             //new ComAva(new MinlClosePac("sh",1),new AvaCom(5 ,MinlClosePac.class, MinlAvaPac.class));
             //new ComAva(new DayVolPac("sh",1),new AvaCom(5,DayVolPac.class, DayVAPac.class));
@@ -50,7 +52,7 @@ public class Controller {
             e.printStackTrace();
         }
     }
-    static void loadMainSet()throws Exception{
+    public static void loadMainSet()throws Exception{
         Properties pro = new Properties();
         FileInputStream in = new FileInputStream("a.properties");
         pro.load(in);

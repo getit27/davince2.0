@@ -1,8 +1,6 @@
 // 使用interface的储存器
 package sto;
 
-import pac.inter.AvaRst;
-import pac.inter.AvaSrc;
 import pac.inter.Storable;
 
 import java.sql.*;

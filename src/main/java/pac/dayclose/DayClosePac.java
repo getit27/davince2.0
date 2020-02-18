@@ -1,14 +1,14 @@
 package pac.dayclose;
-import pac.inter.Accessable;
+import pac.inter.*;
 import pac.*;
-import pac.inter.AvaSrc;
 import pac.key.KeyData;
 import pac.key.KeyYmd;
 
 import java.sql.ResultSet;
-import java.util.Vector;
-public class DayClosePac extends StockPac implements Accessable, AvaSrc {
-    Vector<DayCloseData>data=new Vector<DayCloseData>();
+import java.util.LinkedHashMap;
+
+public class DayClosePac extends StockPac implements Accessable, AvaSrc, GrowSrc, LimAccessable {
+    LinkedHashMap<KeyYmd, Integer> data=new LinkedHashMap<>();
     public DayClosePac(String se, int sn){
         stockexchange=se;
         stocknum=sn;
@@ -19,10 +19,23 @@ public class DayClosePac extends StockPac implements Accessable, AvaSrc {
     }
 
     public DayClosePac(){};
+
     public void newDay(DayCloseData dayclose){
-        data.add(dayclose);
+        data.put(dayclose.getKey(),dayclose.getCloseprice());
     }
-    public Vector<DayCloseData> getDayClose(){ return data; }
+    public LinkedHashMap<KeyYmd, Integer> getData(){ return data; }
+
+    public Object get(int index){
+//        return data.get((KeyYmd) data.keySet().toArray()[index]);
+    }
+
+    @Override
+    public Packages addAll(Packages pac) throws  Exception{
+        if(pac.getPacType()!=this.getPacType())
+            throw new Exception("type not matching!");
+        data.putAll(((DayClosePac)pac).data);
+        return this;
+    }
 
     // Accessable
 
@@ -69,18 +82,47 @@ public class DayClosePac extends StockPac implements Accessable, AvaSrc {
     // AvaSrc
 
     @Override
-    public int getDataSize() {
+    public int getASDataSize() {
         return data.size();
     }
 
     @Override
-    public int getComData(int index) {
-        return data.get(index).getCloseprice();
+    public int getASData(int index) {
+        return data.get((KeyYmd) data.keySet().toArray()[index]);
     }
 
     @Override
     public KeyData getKeyData(int index) {
-        return new KeyYmd(data.get(index).getYmd());
+        return (KeyYmd) data.keySet().toArray()[index];
+    }
+    // GrowSrc
+
+    @Override
+    public int getGSDataSize() {
+        return data.size();
+    }
+
+    @Override
+    public int getGSData(int index) {
+        return data.get((KeyYmd) data.keySet().toArray()[index]);
+    }
+
+    // LimAccessable
+
+    String[]Limitations=null;
+
+    public void setLimitations(String[] limitations) {
+        Limitations = limitations;
+    }
+
+    @Override
+    public int getLimitLength() {
+        return Limitations.length;
+    }
+
+    @Override
+    public String getLimit(int index) {
+        return Limitations[index];
     }
 }
 

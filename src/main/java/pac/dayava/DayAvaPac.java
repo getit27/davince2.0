@@ -23,6 +23,14 @@ public class DayAvaPac extends StockPac implements Storable, AvaRst {
     }
     public Vector<DayAvaData> getDayAva(){ return data; }
 
+    @Override
+    public Packages addAll(Packages pac) throws  Exception{
+        if(pac.getPacType()!=this.getPacType())
+            throw new Exception("type not matching!");
+        data.addAll(((DayAvaPac)pac).data);
+        return this;
+    }
+
     // Storable
 
     @Override
@@ -102,7 +110,7 @@ public class DayAvaPac extends StockPac implements Storable, AvaRst {
     }
 
     @Override
-    public void importData(KeyData key, int ava) {
+    public void importDataAR(KeyData key, int ava) {
         newDay(new DayAvaData((int)key.getKey(0),ava));
     }
 }

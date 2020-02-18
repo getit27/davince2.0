@@ -1,8 +1,9 @@
 package pac;
 public abstract class Packages{
-    protected Class<?> packagetype;
+    protected Class<?> pactype;
     public Packages(){}
-    public Class<?> getPackageType(){
-        return packagetype;
+    abstract public Packages addAll(Packages pac) throws Exception;
+    public Class<?> getPacType(){
+        return pactype;
     }
 }

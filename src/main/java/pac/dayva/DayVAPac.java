@@ -1,6 +1,6 @@
 package pac.dayva;
 
-import pac.dayvol.DayVolPac;
+import pac.Packages;
 import pac.StockPac;
 import pac.inter.AvaRst;
 import pac.inter.Storable;
@@ -18,12 +18,20 @@ public class DayVAPac extends StockPac implements AvaRst, Storable {
 
     public DayVAPac(String se, int sn) {
         super(se, sn);
-        packagetype=DayVAPac.class;
+        pactype =DayVAPac.class;
     }
 
     public DayVAPac() {
         super();
-        packagetype=DayVAPac.class;
+        pactype =DayVAPac.class;
+    }
+
+    @Override
+    public Packages addAll(Packages pac) throws  Exception{
+        if(pac.getPacType()!=this.getPacType())
+            throw new Exception("type not matching!");
+        data.addAll(((DayVAPac)pac).data);
+        return this;
     }
 
     // AvaRst
@@ -38,7 +46,7 @@ public class DayVAPac extends StockPac implements AvaRst, Storable {
     }
 
     @Override
-    public void importData(KeyData key, int ava) {
+    public void importDataAR(KeyData key, int ava) {
         newData(new DayVAData((int)key.getKey(0),ava));
     }
 

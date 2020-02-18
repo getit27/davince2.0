@@ -44,17 +44,17 @@ public class AvaCom implements Computer {
             art = (AvaRst)outtype.getDeclaredConstructor().newInstance();
             art.iniAvaRst(asc.getStockexchange(), asc.getStocknum(), size);
             //Vector<MinlCloseData> mlcd=mlcp.getDayClose();
-            if(size>asc.getDataSize())
+            if(size>asc.getASDataSize())
                 return (Packages)art;
             long avemsize=0;
             for(int i=0;i<size;i++){
-                avemsize+=asc.getComData(i);
+                avemsize+=asc.getASData(i);
             }
-            art.importData(asc.getKeyData(size-1),(int)(avemsize/(long)size));
-            for(int i = size; i<asc.getDataSize(); i++){
-                avemsize-=asc.getComData(i-size);
-                avemsize+=asc.getComData(i);
-                art.importData(asc.getKeyData(i),(int)(avemsize/(long)size));
+            art.importDataAR(asc.getKeyData(size-1),(int)(avemsize/(long)size));
+            for(int i = size; i<asc.getASDataSize(); i++){
+                avemsize-=asc.getASData(i-size);
+                avemsize+=asc.getASData(i);
+                art.importDataAR(asc.getKeyData(i),(int)(avemsize/(long)size));
             }
         }catch(Exception e){
             e.printStackTrace();

@@ -19,6 +19,18 @@ public class TableListPac extends Packages implements LimAccessable {
         return data.get(index);
     }
 
+    public boolean contains(String element){
+        return data.contains(element);
+    }
+
+    @Override
+    public Packages addAll(Packages pac) throws  Exception{
+        if(pac.getPacType()!=this.getPacType())
+            throw new Exception("type not matching!");
+        data.addAll(((TableListPac)pac).data);
+        return this;
+    }
+
     // LimAccessable
 
     boolean accessed=false;

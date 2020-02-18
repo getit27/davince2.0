@@ -1,5 +1,6 @@
 // 分钟数据包，但是主键更少
 package pac.minl;
+import pac.Packages;
 import pac.StockPac;
 import pac.inter.Storable;
 
@@ -17,6 +18,14 @@ public class MinlPac extends StockPac implements Storable {
     };
     public Vector<MinlData> getMinl(){
         return data;
+    }
+
+    @Override
+    public Packages addAll(Packages pac) throws  Exception{
+        if(pac.getPacType()!=this.getPacType())
+            throw new Exception("type not matching!");
+        data.addAll(((MinlPac)pac).data);
+        return this;
     }
 
     // Storable

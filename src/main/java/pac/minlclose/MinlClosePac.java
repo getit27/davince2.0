@@ -1,7 +1,7 @@
 package pac.minlclose;
 
-import pac.inter.Accessable;
-import pac.inter.AvaSrc;
+import pac.Packages;
+import pac.inter.*;
 import pac.key.KeyData;
 import pac.StockPac;
 import pac.key.KeyTime;
@@ -10,7 +10,7 @@ import pac.minl.MinlData;
 import java.sql.ResultSet;
 import java.util.Vector;
 
-public class MinlClosePac extends StockPac implements Accessable, AvaSrc {
+public class MinlClosePac extends StockPac implements LimAccessable,Accessable, AvaSrc, GrowSrc, MinGrowthSrc {
     static final Class<?> datatype=MinlData.class;
     Vector<MinlCloseData>data=new Vector<MinlCloseData>();
     public MinlClosePac(String se, int sn){
@@ -27,6 +27,14 @@ public class MinlClosePac extends StockPac implements Accessable, AvaSrc {
         data.add(minlclose);
     }
     public Vector<MinlCloseData> getDayClose(){ return data; }
+
+    @Override
+    public Packages addAll(Packages pac) throws  Exception{
+        if(pac.getPacType()!=this.getPacType())
+            throw new Exception("type not matching!");
+        data.addAll(((MinlClosePac)pac).data);
+        return this;
+    }
 
     // Accessable
 
@@ -75,12 +83,12 @@ public class MinlClosePac extends StockPac implements Accessable, AvaSrc {
     // AvaSrc
 
     @Override
-    public int getDataSize() {
+    public int getASDataSize() {
         return data.size();
     }
 
     @Override
-    public int getComData(int index) {
+    public int getASData(int index) {
         return data.get(index).getCloseprice();
     }
 
@@ -90,6 +98,75 @@ public class MinlClosePac extends StockPac implements Accessable, AvaSrc {
                 data.get(index).getYmd(),
                 data.get(index).getHm()
         );
+    }
+
+    // GrowSrc
+
+
+    @Override
+    public int getGSDataSize() {
+        return data.size();
+    }
+
+    @Override
+    public int getGSData(int index) {
+        return data.get(index).getCloseprice();
+    }
+
+    // LimAccess
+
+    String[]Limitations=null;
+
+    public void setLimitations(String[] limitations) {
+        Limitations = limitations;
+    }
+
+    @Override
+    public int getLimitLength() {
+        return Limitations.length;
+    }
+
+    @Override
+    public String getLimit(int index) {
+        return Limitations[index];
+    }
+
+    // MinGrowthSrc
+
+    @Override
+    public void MinGrowthSrcInitialize() {
+        src=MinGrowthSrc.class;
+        rstType=new Class<?>[]{MinGrowthRst.class};
+    }
+
+    @Override
+    public int getMgsDataSize() {
+        return data.size();
+    }
+
+    @Override
+    public int getMgsData(int index) {
+        return data.get(index).getCloseprice();
+    }
+
+    @Override
+    public boolean isLastMin(int index) {
+        return data.get(index).getHm()==1500;
+    }
+
+    // Mcomputable
+
+    Class<?> src=null;
+    Class<?>[] rstType=null;
+
+    @Override
+    public Class<?> getSrc() {
+        return src;
+    }
+
+    @Override
+    public Class<?>[] getRstType() {
+        return rstType;
     }
 }
 

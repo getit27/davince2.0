@@ -1,9 +1,9 @@
 package com;
 
-import pac.Packages;
+import pac.Packet;
 
 public interface Computer {
     public Class<?>getInType();
     public Class<?>getOutType();
-    public Packages compute(Packages p);
+    public Packet compute(Packet p);
 }

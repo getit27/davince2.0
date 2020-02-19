@@ -1,6 +1,6 @@
 package pac;
 
-public abstract class StockPac extends Packages {
+public abstract class StockPac extends Packet {
     protected String stockexchange=null;
     protected int stocknum=0;
     public StockPac(String se, int sn){

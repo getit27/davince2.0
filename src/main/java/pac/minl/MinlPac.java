@@ -1,6 +1,6 @@
 // 分钟数据包，但是主键更少
 package pac.minl;
-import pac.Packages;
+import pac.Packet;
 import pac.StockPac;
 import pac.inter.Storable;
 
@@ -21,7 +21,7 @@ public class MinlPac extends StockPac implements Storable {
     }
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         data.addAll(((MinlPac)pac).data);

@@ -1,11 +1,12 @@
 package pac.minlclose;
 
-import pac.Packages;
+import pac.Packet;
 import pac.inter.*;
 import pac.key.KeyData;
 import pac.StockPac;
 import pac.key.KeyTime;
 import pac.minl.MinlData;
+import pac.minlgrow.MinlGrowPac;
 
 import java.sql.ResultSet;
 import java.util.Vector;
@@ -29,7 +30,7 @@ public class MinlClosePac extends StockPac implements LimAccessable,Accessable, 
     public Vector<MinlCloseData> getDayClose(){ return data; }
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         data.addAll(((MinlClosePac)pac).data);
@@ -136,7 +137,7 @@ public class MinlClosePac extends StockPac implements LimAccessable,Accessable, 
     @Override
     public void MinGrowthSrcInitialize() {
         src=MinGrowthSrc.class;
-        rstType=new Class<?>[]{MinGrowthRst.class};
+        rstType=new Class<?>[]{MinlGrowPac.class};
     }
 
     @Override

@@ -3,7 +3,7 @@ package algo;
 import acc.LimAccess;
 import acc.UniAccess;
 import ctr.GlobalVariable;
-import pac.Packages;
+import pac.Packet;
 import pac.dayclose.DayClosePac;
 import pac.key.KeyYmd;
 import pac.minlclose.MinlClosePac;
@@ -90,7 +90,7 @@ public class MinlGrow{
             acc2.setLimitations(new String[]{"ymd=" + firstday, "hm>=" + firstmintue});
             new LimAccess(acc1).getPackage();
             new LimAccess(acc2).getPackage();
-            mcp = (MinlClosePac) acc2.addAll((Packages) acc1);
+            mcp = (MinlClosePac) acc2.addAll((Packet) acc1);
         }
     }
 

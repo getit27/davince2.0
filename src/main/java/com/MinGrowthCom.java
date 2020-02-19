@@ -1,11 +1,9 @@
 package com;
 
-import pac.Packages;
 import pac.inter.Mcomputable;
 import pac.inter.Mcomputed;
 import pac.inter.MinGrowthRst;
 import pac.inter.MinGrowthSrc;
-import pac.minlclose.MinlClosePac;
 import tol.RoundDivision;
 
 public class MinGrowthCom extends Computerp {
@@ -33,7 +31,7 @@ public class MinGrowthCom extends Computerp {
 
             for(int i=0;i<mgs.getMgsDataSize();i++){
                 mgr.importMgrData(mgs.getKeyData(i),(int)(
-                        RoundDivision.roundDiv(10000*(long)mgs.getMgsData(i),lastdayprice)-10000
++                        RoundDivision.roundDiv(10000*(long)mgs.getMgsData(i),lastdayprice)-10000
                         )
                 );
                 if(mgs.isLastMin(i))

@@ -1,6 +1,6 @@
 package pac.dayva;
 
-import pac.Packages;
+import pac.Packet;
 import pac.StockPac;
 import pac.inter.AvaRst;
 import pac.inter.Storable;
@@ -27,7 +27,7 @@ public class DayVAPac extends StockPac implements AvaRst, Storable {
     }
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         data.addAll(((DayVAPac)pac).data);

@@ -1,6 +1,5 @@
 package inp;
 
-import pac.Packages;
 import pac.inter.Storable;
 
 public interface Inputer {

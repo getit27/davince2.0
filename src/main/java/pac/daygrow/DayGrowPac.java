@@ -1,6 +1,6 @@
 package pac.daygrow;
 
-import pac.Packages;
+import pac.Packet;
 import pac.StockPac;
 import pac.inter.GrowRst;
 import pac.inter.Storable;
@@ -28,7 +28,7 @@ public class DayGrowPac extends StockPac implements GrowRst, Storable {
     }
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         datas.addAll(((DayGrowPac)pac).datas);

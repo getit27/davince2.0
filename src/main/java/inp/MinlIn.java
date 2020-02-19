@@ -1,7 +1,5 @@
 package inp;
 
-import pac.Packages;
-import pac.StockPac;
 import pac.inter.Storable;
 import pac.minl.MinlData;
 import pac.minl.MinlPac;
@@ -72,9 +70,12 @@ public class MinlIn implements Inputer {
                 int ymd=year*10000+month*100+day;
                 int hm=hour*100+minute;
 
-                MinlData min=new MinlData(ymd,hm,BytesTo.Bytes2int(bytes[1]),
-                        BytesTo.Bytes2int(bytes[2]),BytesTo.Bytes2int(bytes[3]),
-                        BytesTo.Bytes2int(bytes[4]),BytesTo.Bytes2float(bytes[5]),
+                MinlData min=new MinlData(ymd,hm,
+                        (int)(BytesTo.Bytes2float(bytes[1])*100),
+                        (int)(BytesTo.Bytes2float(bytes[2])*100),
+                        (int)(BytesTo.Bytes2float(bytes[3])*100),
+                        (int)(BytesTo.Bytes2float(bytes[4])*100),
+                        (int)BytesTo.Bytes2float(bytes[5]),
                         BytesTo.Bytes2int(bytes[6]));
                 pac.newMinl(min);
                 probe=fis.read();

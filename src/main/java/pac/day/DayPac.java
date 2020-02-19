@@ -1,9 +1,9 @@
 package pac.day;
-import pac.Packages;
+import pac.Packet;
 import pac.inter.Storable;
 
 import java.util.Vector;
-public class DayPac extends Packages implements Storable {
+public class DayPac extends Packet implements Storable {
     String stockexchange;
     int stocknum;
     Vector<DayData>data=new Vector<DayData>();
@@ -21,7 +21,7 @@ public class DayPac extends Packages implements Storable {
     public int getStocknum(){return stocknum;}
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         data.addAll(((DayPac)pac).data);

@@ -24,7 +24,7 @@ public class DayAvaPac extends StockPac implements Storable, AvaRst {
     public Vector<DayAvaData> getDayAva(){ return data; }
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         data.addAll(((DayAvaPac)pac).data);

@@ -1,12 +1,12 @@
 package pac.table;
 
-import pac.Packages;
+import pac.Packet;
 import pac.inter.LimAccessable;
 
 import java.sql.ResultSet;
 import java.util.Vector;
 
-public class TableListPac extends Packages implements LimAccessable {
+public class TableListPac extends Packet implements LimAccessable {
     private Class<?> packagetype=TableListPac.class;
 
     Vector<String> data=new Vector<>();
@@ -24,7 +24,7 @@ public class TableListPac extends Packages implements LimAccessable {
     }
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         data.addAll(((TableListPac)pac).data);

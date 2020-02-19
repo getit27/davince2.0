@@ -19,7 +19,7 @@ import sto.Storer;
 
 import static ctr.Controller.loadMainSet;
 
-public class Test {
+public class MinGrowthTest {
     public static void main(String[]args) {
         try {
             DataBaseSet.loadDataBaseSet();
@@ -32,6 +32,7 @@ public class Test {
             MinlClosePac mcp = new MinlClosePac("sh",1);
             new UniAccess(mcp).getPackage();
             MinGrowthCom mgc = new MinGrowthCom();
+            mcp.MinGrowthSrcInitialize();
             mgc.initialize(new Mcomputable[]{mcp});
             new Storer().store((Storable)mgc.compute()[0]);
         } catch (Exception e) {

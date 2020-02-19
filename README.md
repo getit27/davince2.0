@@ -31,5 +31,6 @@
     + MComputer接口下的计算
         + 操作流程
             1. 创建一个Mcomputer实例
-            2. 调用initialize方法，参数为Mcomputable数组
-            3. 调用compute方法，得到Mcomputed数组
+            2. 将Mcomputable数组初始化
+            3. 调用initialize方法，参数为Mcomputable数组
+            4. 调用compute方法，得到Mcomputed数组

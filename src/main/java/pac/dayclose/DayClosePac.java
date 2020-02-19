@@ -26,11 +26,12 @@ public class DayClosePac extends StockPac implements Accessable, AvaSrc, GrowSrc
     public LinkedHashMap<KeyYmd, Integer> getData(){ return data; }
 
     public Object get(int index){
-//        return data.get((KeyYmd) data.keySet().toArray()[index]);
+        KeyYmd key=(KeyYmd)data.keySet().toArray()[index];
+        return data.get(key);
     }
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         data.putAll(((DayClosePac)pac).data);

@@ -1,6 +1,6 @@
 package pac.dayvol;
 
-import pac.Packages;
+import pac.Packet;
 import pac.StockPac;
 import pac.inter.Accessable;
 import pac.inter.AvaSrc;
@@ -28,7 +28,7 @@ public class DayVolPac extends StockPac implements AvaSrc, Accessable {
     }
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         data.addAll(((DayVolPac)pac).data);

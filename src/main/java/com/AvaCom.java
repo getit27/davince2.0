@@ -2,7 +2,7 @@ package com;
 
 import pac.inter.AvaRst;
 import pac.inter.AvaSrc;
-import pac.Packages;
+import pac.Packet;
 
 import java.lang.*;
 
@@ -36,7 +36,7 @@ public class AvaCom implements Computer {
     }
 
     @Override
-    public Packages compute(Packages p) {
+    public Packet compute(Packet p) {
         AvaSrc asc= (AvaSrc)p;
         AvaRst art=null;
         try {
@@ -45,7 +45,7 @@ public class AvaCom implements Computer {
             art.iniAvaRst(asc.getStockexchange(), asc.getStocknum(), size);
             //Vector<MinlCloseData> mlcd=mlcp.getDayClose();
             if(size>asc.getASDataSize())
-                return (Packages)art;
+                return (Packet)art;
             long avemsize=0;
             for(int i=0;i<size;i++){
                 avemsize+=asc.getASData(i);
@@ -59,6 +59,6 @@ public class AvaCom implements Computer {
         }catch(Exception e){
             e.printStackTrace();
         }
-        return (Packages)art;
+        return (Packet)art;
     }
 }

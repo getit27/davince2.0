@@ -1,6 +1,6 @@
 package pac.minlava;
 
-import pac.Packages;
+import pac.Packet;
 import pac.StockPac;
 import pac.inter.AvaRst;
 import pac.inter.Storable;
@@ -24,7 +24,7 @@ public class MinlAvaPac extends StockPac implements AvaRst, Storable {
     public Vector<MinlAvaData> getDayAva(){ return data; }
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         data.addAll(((MinlAvaPac)pac).data);

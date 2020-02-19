@@ -1,6 +1,6 @@
 package com;
 
-import pac.Packages;
+import pac.Packet;
 import pac.inter.GrowRst;
 import pac.inter.GrowSrc;
 import tol.RoundDivision;
@@ -45,7 +45,7 @@ public class GrowCom implements Computer{
     }
 
     @Override
-    public Packages compute(Packages p) {
+    public Packet compute(Packet p) {
         GrowSrc gsc=(GrowSrc)p;
         GrowRst grt=null;
         try{
@@ -54,7 +54,7 @@ public class GrowCom implements Computer{
             grt.iniGrowRst(gsc.getStockexchange(),gsc.getStocknum(),size);
 
             if(size>gsc.getGSDataSize())
-                return (Packages)grt;
+                return (Packet)grt;
 
             for(int i = size; i<gsc.getGSDataSize(); i++){
                 grt.importDataGR(gsc.getKeyData(i),(int)(
@@ -64,6 +64,6 @@ public class GrowCom implements Computer{
         }catch (Exception e){
             e.printStackTrace();
         }
-        return (Packages) grt;
+        return (Packet) grt;
     }
 }

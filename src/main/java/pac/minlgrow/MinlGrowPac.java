@@ -1,8 +1,7 @@
 package pac.minlgrow;
 
-import pac.Packages;
+import pac.Packet;
 import pac.StockPac;
-import pac.inter.GrowRst;
 import pac.inter.MinGrowthRst;
 import pac.inter.Storable;
 import pac.key.KeyData;
@@ -33,7 +32,7 @@ public class MinlGrowPac extends StockPac implements Storable, MinGrowthRst {
     }
 
     @Override
-    public Packages addAll(Packages pac) throws  Exception{
+    public Packet addAll(Packet pac) throws  Exception{
         if(pac.getPacType()!=this.getPacType())
             throw new Exception("type not matching!");
         datas.addAll(((MinlGrowPac)pac).datas);

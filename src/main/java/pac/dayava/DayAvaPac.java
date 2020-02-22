@@ -1,21 +1,16 @@
 package pac.dayava;
 
 import pac.*;
-import pac.dayclose.DayCloseData;
-import pac.daydev.DayDevPac;
-import pac.dayva.DayVAPac;
-import pac.inter.Accessable;
+import pac.inter.Accessible;
 import pac.inter.AvaRst;
 import pac.inter.Storable;
-import pac.inter.mcom.DeviationSrc;
 import pac.key.KeyData;
 import pac.key.KeyYmd;
-import tol.DateShift;
 
 import java.sql.ResultSet;
 import java.util.Vector;
 
-public class DayAvaPac extends StockPac implements Storable, AvaRst/*, DeviationSrc*/, Accessable {
+public class DayAvaPac extends StockPac implements Storable, AvaRst/*, DeviationSrc*/, Accessible {
 
     private Vector<KeyYmd>keys=new Vector<>();
     private Vector<Integer>datas=new Vector<>();

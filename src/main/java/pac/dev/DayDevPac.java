@@ -1,4 +1,4 @@
-package pac.daydev;
+package pac.dev;
 
 import pac.Packet;
 import pac.StockPac;
@@ -69,8 +69,6 @@ public class DayDevPac extends StockPac implements DeviationRst, Storable {
     }
 
     // Storable
-
-
 
     @Override
     public String getTableName() {

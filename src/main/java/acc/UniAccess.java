@@ -1,13 +1,13 @@
 package acc;
 
-import pac.inter.Accessable;
+import pac.inter.Accessible;
 import set.DataBaseSet;
 
 import java.sql.*;
 
 public class UniAccess implements Accesser {
-    Accessable ap=null;
-    public UniAccess(Accessable p){
+    Accessible ap=null;
+    public UniAccess(Accessible p){
         ap=p;
     }
 
@@ -17,7 +17,7 @@ public class UniAccess implements Accesser {
     }
 
     @Override
-    public Accessable getPackage() {
+    public Accessible getPackage() {
 
         Connection conn =null;
         Statement stmt=null;

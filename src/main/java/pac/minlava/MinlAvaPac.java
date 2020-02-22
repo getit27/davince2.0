@@ -51,7 +51,6 @@ public class MinlAvaPac extends StockPac implements AvaRst, Storable {
 
     // Storable
 
-
     @Override
     public Class<?> getPacType() {
         return MinlAvaPac.class;

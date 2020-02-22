@@ -12,7 +12,7 @@ import pac.minlgrow.MinlGrowPac;
 import java.sql.ResultSet;
 import java.util.Vector;
 
-public class MinlClosePac extends StockPac implements LimAccessable,Accessable, AvaSrc, GrowSrc, MinGrowthSrc {
+public class MinlClosePac extends StockPac implements LimAccessible, Accessible, AvaSrc, GrowSrc, MinGrowthSrc {
     static final Class<?> datatype=MinlData.class;
     Vector<MinlCloseData>data=new Vector<MinlCloseData>();
     public MinlClosePac(String se, int sn){

@@ -4,7 +4,7 @@ package pac.inter;
 
 import java.sql.ResultSet;
 
-public interface Accessable {
+public interface Accessible {
     public boolean isAccessed();
     public void getAccessed();
     public String getTableName();

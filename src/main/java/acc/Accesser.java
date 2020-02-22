@@ -2,9 +2,9 @@
 
 package acc;
 
-import pac.inter.Accessable;
+import pac.inter.Accessible;
 
 public interface Accesser {
     public Class<?> getPacType();
-    public Accessable getPackage();
+    public Accessible getPackage();
 }

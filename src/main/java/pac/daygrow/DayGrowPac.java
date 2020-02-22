@@ -2,8 +2,8 @@ package pac.daygrow;
 
 import pac.Packet;
 import pac.StockPac;
-import pac.daydev.DayDevPac;
-import pac.inter.Accessable;
+import pac.dev.DayDevPac;
+import pac.inter.Accessible;
 import pac.inter.GrowRst;
 import pac.inter.Storable;
 import pac.inter.mcom.DeviationSrc;
@@ -14,7 +14,7 @@ import tol.DateShift;
 import java.sql.ResultSet;
 import java.util.Vector;
 
-public class DayGrowPac extends StockPac implements GrowRst, Storable, Accessable, DeviationSrc {
+public class DayGrowPac extends StockPac implements GrowRst, Storable, Accessible, DeviationSrc {
     private Vector<KeyYmd>keys=new Vector<>();
     private Vector<Integer> datas =new Vector<>();
     int size;
@@ -138,7 +138,7 @@ public class DayGrowPac extends StockPac implements GrowRst, Storable, Accessabl
         return stodata;
     }
 
-    // Accessable
+    // Accessible
 
     String[] columns=new String[]{
             "ymd",

@@ -1,13 +1,13 @@
 package acc;
 
-import pac.inter.LimAccessable;
+import pac.inter.LimAccessible;
 import set.DataBaseSet;
 
 import java.sql.*;
 
 public class LimAccess implements Accesser {
-    LimAccessable lap=null;
-    public LimAccess(LimAccessable p){
+    LimAccessible lap=null;
+    public LimAccess(LimAccessible p){
         lap=p;
     }
 
@@ -17,7 +17,7 @@ public class LimAccess implements Accesser {
     }
 
     @Override
-    public LimAccessable getPackage() {
+    public LimAccessible getPackage() {
 
         Connection conn =null;
         Statement stmt=null;

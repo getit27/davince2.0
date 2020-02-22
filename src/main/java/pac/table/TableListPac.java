@@ -1,12 +1,12 @@
 package pac.table;
 
 import pac.Packet;
-import pac.inter.LimAccessable;
+import pac.inter.LimAccessible;
 
 import java.sql.ResultSet;
 import java.util.Vector;
 
-public class TableListPac extends Packet implements LimAccessable {
+public class TableListPac extends Packet implements LimAccessible {
     private Class<?> packagetype=TableListPac.class;
 
     Vector<String> data=new Vector<>();

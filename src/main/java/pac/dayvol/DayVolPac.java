@@ -2,7 +2,7 @@ package pac.dayvol;
 
 import pac.Packet;
 import pac.StockPac;
-import pac.inter.Accessable;
+import pac.inter.Accessible;
 import pac.inter.AvaSrc;
 import pac.key.KeyData;
 import pac.key.KeyYmd;
@@ -10,7 +10,7 @@ import pac.key.KeyYmd;
 import java.sql.ResultSet;
 import java.util.Vector;
 
-public class DayVolPac extends StockPac implements AvaSrc, Accessable {
+public class DayVolPac extends StockPac implements AvaSrc, Accessible {
     Vector<DayVolData> data=new Vector<>();
 
     public DayVolPac(String se,int sn){

@@ -11,7 +11,7 @@ public class MinInputTest {
             DataBaseSet.loadDataBaseSet();
             loadMainSet();
 
-            new InSto(new MinlIn("F:\\gkt\\zyyht\\vipdoc\\sh\\minline\\sh000001.lc1"));
+            new InSto(new MinlIn("F:\\gkt\\zyyht\\vipdoc\\sh\\minline\\sh600000.lc1"));
         }catch(Exception e){
             e.printStackTrace();
         }

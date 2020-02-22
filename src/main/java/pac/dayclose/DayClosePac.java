@@ -7,7 +7,7 @@ import pac.key.KeyYmd;
 import java.sql.ResultSet;
 import java.util.LinkedHashMap;
 
-public class DayClosePac extends StockPac implements Accessable, AvaSrc, GrowSrc, LimAccessable {
+public class DayClosePac extends StockPac implements Accessible, AvaSrc, GrowSrc, LimAccessible {
     LinkedHashMap<KeyYmd, Integer> data=new LinkedHashMap<>();
     public DayClosePac(String se, int sn){
         stockExchange =se;

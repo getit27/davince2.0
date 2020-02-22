@@ -29,9 +29,13 @@ public class MinGrowthCom extends Computerp {
 
             int lastdayprice=2147483647;
 
-            for(int i=0;i<mgs.getMgsDataSize();i++){
+            int i0=0;
+            while(!mgs.isLastMin(i0))i0++;
+            lastdayprice=mgs.getMgsData(i0);
+
+            for(int i=i0;i<mgs.getMgsDataSize();i++){
                 mgr.importMgrData(mgs.getKeyData(i),(int)(
-+                        RoundDivision.roundDiv(10000*(long)mgs.getMgsData(i),lastdayprice)-10000
+                        RoundDivision.roundDiv(10000*(long)mgs.getMgsData(i),lastdayprice)-10000
                         )
                 );
                 if(mgs.isLastMin(i))

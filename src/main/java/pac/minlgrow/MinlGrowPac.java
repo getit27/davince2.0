@@ -2,7 +2,7 @@ package pac.minlgrow;
 
 import pac.Packet;
 import pac.StockPac;
-import pac.inter.MinGrowthRst;
+import pac.inter.mcom.MinGrowthRst;
 import pac.inter.Storable;
 import pac.key.KeyData;
 
@@ -64,8 +64,8 @@ public class MinlGrowPac extends StockPac implements Storable, MinGrowthRst {
 
     @Override
     public String getTableName() {
-        return getStockexchange()+
-                String.format("%06d",getStocknum())+
+        return getStockExchange()+
+                String.format("%06d", getStockNum())+
                 "minl";
     }
 
@@ -136,9 +136,9 @@ public class MinlGrowPac extends StockPac implements Storable, MinGrowthRst {
     // MinGrowthRst
 
     @Override
-    public void MinGrowthRstInitialize(String stockexchange, int stocknum) {
-        this.stockexchange=stockexchange;
-        this.stocknum=stocknum;
+    public void minGrowthRstInitialize(String stockexchange, int stocknum) {
+        this.stockExchange =stockexchange;
+        this.stockNum =stocknum;
     }
 
     @Override

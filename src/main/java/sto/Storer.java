@@ -98,10 +98,6 @@ public class Storer {
 
     public void store(Storable sta)throws Exception{
 
-        if(!Storable.class.isAssignableFrom(sta.getPacType())) {
-            throw new Exception("Class is not Storable!");
-        }
-
         if(sta.getStoreData().length==0)
             return;
         Connection conn = null;

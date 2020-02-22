@@ -46,7 +46,7 @@ public class MinlGrow{
             boolean day= true;
             if(dcp==null) {
                 day = GlobalVariable.tablelist.contains(
-                        mcp.getStockexchange() + String.format("%06d", mcp.getStocknum()));
+                        mcp.getStockExchange() + String.format("%06d", mcp.getStockNum()));
 
                 if (day) {
                     dcp = new DayClosePac(stockexchange, stocknum);

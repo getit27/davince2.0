@@ -15,4 +15,11 @@ public class KeyYmd implements KeyData {
     public Object getKey(int index) {
         return ymd;
     }
+
+    @Override
+    public int compare(KeyData key) throws Exception {
+        if(key.getClass()!=KeyYmd.class)
+            throw new Exception("KeyData type mismatch");
+        return Integer.compare(ymd, ((KeyYmd) key).ymd);
+    }
 }

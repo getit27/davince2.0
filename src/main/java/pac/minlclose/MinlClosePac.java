@@ -2,6 +2,7 @@ package pac.minlclose;
 
 import pac.Packet;
 import pac.inter.*;
+import pac.inter.mcom.MinGrowthSrc;
 import pac.key.KeyData;
 import pac.StockPac;
 import pac.key.KeyTime;
@@ -15,8 +16,8 @@ public class MinlClosePac extends StockPac implements LimAccessable,Accessable, 
     static final Class<?> datatype=MinlData.class;
     Vector<MinlCloseData>data=new Vector<MinlCloseData>();
     public MinlClosePac(String se, int sn){
-        stockexchange=se;
-        stocknum=sn;
+        stockExchange =se;
+        stockNum =sn;
     }
 
     public MinlClosePac(String sen) {
@@ -59,7 +60,7 @@ public class MinlClosePac extends StockPac implements LimAccessable,Accessable, 
 
     @Override
     public String getTableName() {
-        return stockexchange+String.format("%06d",stocknum)+"minl";
+        return stockExchange +String.format("%06d", stockNum)+"minl";
     }
 
     @Override
@@ -135,7 +136,7 @@ public class MinlClosePac extends StockPac implements LimAccessable,Accessable, 
     // MinGrowthSrc
 
     @Override
-    public void MinGrowthSrcInitialize() {
+    public void minGrowthSrcInitialize() {
         src=MinGrowthSrc.class;
         rstType=new Class<?>[]{MinlGrowPac.class};
     }

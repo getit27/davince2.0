@@ -51,7 +51,7 @@ public class GrowCom implements Computer{
         try{
             // 创造输出对象
             grt =(GrowRst)outtype.getDeclaredConstructor().newInstance();
-            grt.iniGrowRst(gsc.getStockexchange(),gsc.getStocknum(),size);
+            grt.iniGrowRst(gsc.getStockExchange(),gsc.getStockNum(),size);
 
             if(size>gsc.getGSDataSize())
                 return (Packet)grt;

@@ -42,7 +42,7 @@ public class AvaCom implements Computer {
         try {
             // 创建输出对象
             art = (AvaRst)outtype.getDeclaredConstructor().newInstance();
-            art.iniAvaRst(asc.getStockexchange(), asc.getStocknum(), size);
+            art.iniAvaRst(asc.getStockExchange(), asc.getStockNum(), size);
             //Vector<MinlCloseData> mlcd=mlcp.getDayClose();
             if(size>asc.getASDataSize())
                 return (Packet)art;

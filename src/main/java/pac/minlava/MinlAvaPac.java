@@ -12,8 +12,8 @@ public class MinlAvaPac extends StockPac implements AvaRst, Storable {
     Vector<MinlAvaData>data= new Vector<MinlAvaData>();
     int size;
     public MinlAvaPac(String se, int sn, int si){
-        stockexchange=se;
-        stocknum=sn;
+        stockExchange =se;
+        stockNum =sn;
         size=si;
     }
     public MinlAvaPac(){};
@@ -35,8 +35,8 @@ public class MinlAvaPac extends StockPac implements AvaRst, Storable {
 
     @Override
     public void iniAvaRst(String exchangename, int stocknum, int size) {
-        this.stockexchange=exchangename;
-        this.stocknum=stocknum;
+        this.stockExchange =exchangename;
+        this.stockNum =stocknum;
         this.size=size;
     }
 
@@ -59,8 +59,8 @@ public class MinlAvaPac extends StockPac implements AvaRst, Storable {
 
     @Override
     public String getTableName() {
-        return getStockexchange()+
-                String.format("%06d",getStocknum())+
+        return getStockExchange()+
+                String.format("%06d", getStockNum())+
                 "minl";
     }
 

@@ -10,8 +10,8 @@ import java.util.LinkedHashMap;
 public class DayClosePac extends StockPac implements Accessable, AvaSrc, GrowSrc, LimAccessable {
     LinkedHashMap<KeyYmd, Integer> data=new LinkedHashMap<>();
     public DayClosePac(String se, int sn){
-        stockexchange=se;
-        stocknum=sn;
+        stockExchange =se;
+        stockNum =sn;
     }
 
     public DayClosePac(String sen) {
@@ -59,7 +59,7 @@ public class DayClosePac extends StockPac implements Accessable, AvaSrc, GrowSrc
 
     @Override
     public String getTableName() {
-        return stockexchange+String.format("%06d",stocknum)+"day";
+        return stockExchange +String.format("%06d", stockNum)+"day";
     }
 
     @Override

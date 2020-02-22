@@ -1,8 +1,8 @@
-package pac.inter;
+package pac.inter.mcom;
 
 import pac.key.KeyData;
 
 public interface MinGrowthRst extends Mcomputed {
-    public void MinGrowthRstInitialize(String stockexchange,int stocknum);
+    public void minGrowthRstInitialize(String stockExchange, int stockNum);
     public void importMgrData(KeyData key, int growth);
 }

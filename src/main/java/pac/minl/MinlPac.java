@@ -9,8 +9,8 @@ import java.util.Vector;
 public class MinlPac extends StockPac implements Storable {
     Vector<MinlData>data=new Vector<MinlData>();
     public MinlPac(String se, int sn){
-        stockexchange=se;
-        stocknum=sn;
+        stockExchange =se;
+        stockNum =sn;
     }
     public MinlPac(){}
     public void newMinl(MinlData min){
@@ -38,8 +38,8 @@ public class MinlPac extends StockPac implements Storable {
 
     @Override
     public String getTableName() {
-        return getStockexchange()+
-                String.format("%06d",getStocknum())+
+        return getStockExchange()+
+                String.format("%06d", getStockNum())+
                 "minl";
     }
 

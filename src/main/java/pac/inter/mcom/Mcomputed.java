@@ -1,4 +1,4 @@
-package pac.inter;
+package pac.inter.mcom;
 
 public interface Mcomputed {
 }

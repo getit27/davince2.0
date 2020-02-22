@@ -40,8 +40,8 @@ public class DayVAPac extends StockPac implements AvaRst, Storable {
 
     @Override
     public void iniAvaRst(String exchangename, int stocknum, int size) {
-        this.stockexchange=exchangename;
-        this.stocknum=stocknum;
+        this.stockExchange =exchangename;
+        this.stockNum =stocknum;
         this.size=size;
     }
 
@@ -60,8 +60,8 @@ public class DayVAPac extends StockPac implements AvaRst, Storable {
 
     @Override
     public String getTableName() {
-        return getStockexchange()+
-                String.format("%06d",getStocknum())+
+        return getStockExchange()+
+                String.format("%06d", getStockNum())+
                 "day";
     }
 

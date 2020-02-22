@@ -14,8 +14,8 @@ public class DayVolPac extends StockPac implements AvaSrc, Accessable {
     Vector<DayVolData> data=new Vector<>();
 
     public DayVolPac(String se,int sn){
-        stockexchange=se;
-        stocknum=sn;
+        stockExchange =se;
+        stockNum =sn;
         pactype =DayVolPac.class;
     }
 
@@ -73,7 +73,7 @@ public class DayVolPac extends StockPac implements AvaSrc, Accessable {
 
     @Override
     public String getTableName() {
-        return stockexchange+String.format("%06d",stocknum)+"day";
+        return stockExchange +String.format("%06d", stockNum)+"day";
     }
 
     @Override

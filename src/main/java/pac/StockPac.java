@@ -1,17 +1,24 @@
 package pac;
 
+import pac.key.KeyData;
+import pac.key.KeyYmd;
+
+import java.util.Vector;
+
 public abstract class StockPac extends Packet {
-    protected String stockexchange=null;
-    protected int stocknum=0;
+    protected String stockExchange =null;
+    protected int stockNum =0;
+
     public StockPac(String se, int sn){
-        stockexchange=se;
-        stocknum=sn;
+        stockExchange =se;
+        stockNum =sn;
     }
     public StockPac(String sen){
-        stockexchange=sen.substring(0,2);
-        stocknum=Integer.parseInt(sen.substring(2,8));
+        stockExchange =sen.substring(0,2);
+        stockNum =Integer.parseInt(sen.substring(2,8));
     }
+
     public StockPac(){};
-    public String getStockexchange(){ return stockexchange; }
-    public int getStocknum(){ return stocknum; }
+    public String getStockExchange(){ return stockExchange; }
+    public int getStockNum(){ return stockNum; }
 }

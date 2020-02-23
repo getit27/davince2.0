@@ -23,10 +23,10 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class Controller {
-    static String shday;
-    static String shminl;
-    static String szday;
-    static String szminl;
+    public static String shday;
+    public static String shminl;
+    public static String szday;
+    public static String szminl;
 
     public static void main(String[]args) {
         //new InSto(new DayIn("F:\\gkt\\zyyht\\vipdoc\\sh\\lday\\sh000001.day"));

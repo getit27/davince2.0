@@ -11,6 +11,12 @@ public class TableListPac extends Packet implements LimAccessible {
 
     Vector<String> data=new Vector<>();
 
+    String dbName= "runoob";
+
+    public TableListPac(String dbName){
+        this.dbName=dbName;
+    }
+
     public int getDataLength(){
         return data.size();
     }
@@ -42,7 +48,7 @@ public class TableListPac extends Packet implements LimAccessible {
 
     @Override
     public String getLimit(int index) {
-        return "table_schema='runoob'";
+        return "table_schema='"+dbName+"'";
     }
 
     @Override

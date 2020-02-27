@@ -9,10 +9,11 @@ import pac.dayvol.DayVolPac;
 import pac.minlava.MinlAvaPac;
 import pac.minlclose.MinlClosePac;
 import pac.table.TableListPac;
+import set.DataBaseSet;
 
 public class BatchComAva {
     public BatchComAva()throws Exception{
-        TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac()).getPackage();
+        TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac(DataBaseSet.DB_NAME)).getPackage();
         for(int i=0;i<tablelist.getDataLength();i++){
             String tablename=tablelist.getData(i);
             String stockname=tablename.substring(0,8);
@@ -31,7 +32,7 @@ public class BatchComAva {
     }
     public BatchComAva(int type)throws Exception{
         if(type==0){
-            TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac()).getPackage();
+            TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac(DataBaseSet.DB_NAME)).getPackage();
             for(int i=0;i<tablelist.getDataLength();i++){
                 String tablename=tablelist.getData(i);
                 String stockname=tablename.substring(0,8);
@@ -44,7 +45,7 @@ public class BatchComAva {
                 }
             }
         }else if(type==1){
-            TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac()).getPackage();
+            TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac(DataBaseSet.DB_NAME)).getPackage();
             for(int i=0;i<tablelist.getDataLength();i++){
                 String tablename=tablelist.getData(i);
                 String stockname=tablename.substring(0,8);
@@ -55,7 +56,7 @@ public class BatchComAva {
                 }
             }
         }else if(type==2){
-            TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac()).getPackage();
+            TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac(DataBaseSet.DB_NAME)).getPackage();
             for(int i=0;i<tablelist.getDataLength();i++){
                 String tablename=tablelist.getData(i);
                 String stockname=tablename.substring(0,8);

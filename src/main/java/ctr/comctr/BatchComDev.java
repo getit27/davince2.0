@@ -12,11 +12,12 @@ import pac.inter.mcom.Mcomputable;
 import pac.minlclose.MinlClosePac;
 import pac.minlgrow.MinlGrowPac;
 import pac.table.TableListPac;
+import set.DataBaseSet;
 import sto.Storer;
 
 public class BatchComDev {
     public BatchComDev(int type)throws Exception {
-        TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac()).getPackage();
+        TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac(DataBaseSet.DB_NAME)).getPackage();
         if(type==0||type==2){
             // 读取参照指数
             DayGrowPac indexDap=new DayGrowPac("sh",1);

@@ -15,11 +15,12 @@ import pac.inter.mcom.Mcomputable;
 import pac.minlava.MinlAvaPac;
 import pac.minlclose.MinlClosePac;
 import pac.table.TableListPac;
+import set.DataBaseSet;
 import sto.Storer;
 
 public class BatchComGrow {
     public BatchComGrow(int type)throws Exception {
-        TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac()).getPackage();
+        TableListPac tablelist= (TableListPac) new LimAccess(new TableListPac(DataBaseSet.DB_NAME)).getPackage();
         if(type==0||type==2){
             for(int i=0;i<tablelist.getDataLength();i++){
                 String tablename=tablelist.getData(i);
